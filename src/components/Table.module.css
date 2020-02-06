@@ -1,0 +1,46 @@
+.table {
+  margin: 1em 0;
+  border-collapse: collapse;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+td,
+th {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+th {
+  color: black;
+}
+
+.head {
+  background-color: #fdce25;
+}
+
+.headWrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.empty {
+  display: none;
+}
+
+.decr {
+  width: 1px;
+  border: 5px solid transparent;
+  border-top: 5px solid black;
+  margin: 5px;
+}
+
+.asc {
+  width: 1px;
+  border: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
