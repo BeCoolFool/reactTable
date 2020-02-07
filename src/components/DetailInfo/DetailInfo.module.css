@@ -1,7 +1,8 @@
 .wrapper {
-  border: 3px solid #191970;
+  border: 3px solid rgba(0, 0, 0, 0.34);
   border-radius: 6px;
   max-width: 80%;
+  margin: 1em 0 2em;
 
   padding: 1.5em;
 }

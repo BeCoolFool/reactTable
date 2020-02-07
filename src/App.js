@@ -8,6 +8,7 @@ import makeSort from "./functions/makeSort";
 import chunkArray from "./functions/chunkArray";
 import ModeSelect from "./components/ModeSelect/ModeSelect";
 import Search from "./components/Search/Search";
+import AddPerson from "./components/AddPerson/AddPerson";
 
 class App extends Component {
   state = {
@@ -76,7 +77,7 @@ class App extends Component {
       return this.state.data;
     }
 
-    return this.state.data.filter(item => {
+    const searchData = this.state.data.filter(item => {
       return (
         item["firstName"]
           .toLowerCase()
@@ -87,12 +88,29 @@ class App extends Component {
         item["email"].toLowerCase().includes(this.state.search.toLowerCase())
       );
     });
+
+    return searchData.length !== 0 ? searchData : this.state.pureData;
   };
 
   searchHandler = search => {
     this.setState({
       search,
       currentPage: 0
+    });
+  };
+
+  addToTable = (id, firstName, lastName, email, phone) => {
+    const newPerson = {
+      id,
+      firstName,
+      lastName,
+      email,
+      phone
+    };
+
+    this.setState({
+      data: [newPerson, ...this.state.data],
+      pureData: [newPerson, ...this.state.pureData]
     });
   };
 
@@ -107,7 +125,7 @@ class App extends Component {
     if (!this.state.isModeSelected) {
       return <ModeSelect selectData={this.onModeSelect} />;
     }
-
+    console.log(this.state.data);
     return (
       <div className={style.wrapper}>
         {this.state.isLoading ? (
@@ -115,6 +133,7 @@ class App extends Component {
         ) : (
           <Fragment>
             <Search onSearch={this.searchHandler} />
+            <AddPerson addPerson={this.addToTable} />
             <Table
               data={displayData}
               onPersonSelect={this.onPersonSelect}
