@@ -33,14 +33,17 @@ th {
 }
 
 .decr {
-  width: 1px;
+  position: relative;
+  top: 13px;
+  right: -5px;
   border: 5px solid transparent;
   border-top: 5px solid black;
-  margin: 5px;
 }
 
 .asc {
-  width: 1px;
+  position: relative;
+  top: -13px;
+  right: -5px;
   border: 5px solid transparent;
   border-bottom: 5px solid black;
 }

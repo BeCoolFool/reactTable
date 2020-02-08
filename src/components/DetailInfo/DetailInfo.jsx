@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import style from "./DetailInfo.module.css";
+import AddressInfo from "./AddressInfo/AddressInfo";
 
 const DetailInfo = ({ person }) => {
   return (
@@ -7,20 +8,13 @@ const DetailInfo = ({ person }) => {
       <p>
         Выбран пользователь: <b>{`${person.firstName} ${person.lastName}`}</b>
       </p>
-      <p>Описание:</p>
-      <textarea>{person.description}</textarea>
-      <p>
-        Адрес проживания: <b>{person.address.streetAddress}</b>
-      </p>
-      <p>
-        Город: <b>{person.address.city}</b>
-      </p>
-      <p>
-        Провинция/штат: <b>{person.address.state}</b>
-      </p>
-      <p>
-        Индекс: <b>{person.address.zip}</b>
-      </p>
+      {person.description ? (
+        <Fragment>
+          <p>Описание:</p>
+          <textarea>{person.description}</textarea>
+        </Fragment>
+      ) : null}
+      {person.address ? <AddressInfo address={person.address} /> : null}
     </div>
   );
 };

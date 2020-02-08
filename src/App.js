@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import ReactPaginate from "react-paginate";
 import style from "./App.module.css";
 import Loader from "./Loader/Loader";
-import Table from "./components/Table";
+import Table from "./components/Table/Table";
 import DetailInfo from "./components/DetailInfo/DetailInfo";
 import makeSort from "./functions/makeSort";
 import chunkArray from "./functions/chunkArray";
@@ -125,7 +125,6 @@ class App extends Component {
     if (!this.state.isModeSelected) {
       return <ModeSelect selectData={this.onModeSelect} />;
     }
-    console.log(this.state.data);
     return (
       <div className={style.wrapper}>
         {this.state.isLoading ? (
@@ -149,10 +148,9 @@ class App extends Component {
             previousLabel={"<"}
             nextLabel={">"}
             breakLabel={"..."}
-            breakClassName={"break-me"}
             pageCount={pageCount}
             marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
+            pageRangeDisplayed={3}
             onPageChange={this.pageChangeHandler}
             containerClassName={style.pagination}
             activeClassName={style.active}
