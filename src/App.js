@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import ReactPaginate from "react-paginate";
 import style from "./App.module.css";
-import Loader from "./Loader/Loader";
+import Loader from "./components/Loader/Loader";
 import Table from "./components/Table/Table";
 import DetailInfo from "./components/DetailInfo/DetailInfo";
 import makeSort from "./functions/makeSort";
