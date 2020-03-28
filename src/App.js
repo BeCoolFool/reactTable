@@ -24,13 +24,17 @@ class App extends Component {
   };
 
   async getDataFrom(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-    this.setState({
-      isLoading: false,
-      pureData: data,
-      data
-    });
+    fetch(url)
+    .then(data => data.json())
+    .then(data => {
+      this.setState({
+        isLoading: false,
+        pureData: data,
+        data
+      });
+    })
+    .catch(err => console.log(err));
+    
   }
 
   onPersonSelect = info => {
