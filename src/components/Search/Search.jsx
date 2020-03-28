@@ -10,6 +10,7 @@ class Search extends Component {
   }
 
   handleChange = event => {
+    console.log(this.props);
     this.setState({
       value: event.target.value
     });
@@ -41,3 +42,15 @@ class Search extends Component {
 }
 
 export default Search;
+
+/* 
+const Seacrh = ({ onSearch }) => {
+  const [value, setValue] = useState("");
+  handleChange = event => setValue(event.target.value);
+  handleSubmit = event => {
+    event.preventDefault();
+    setValue("");
+    onSearch(value);
+  };
+}
+*/
