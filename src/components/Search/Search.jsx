@@ -26,3 +26,15 @@ const Search = ({ onSearch }) => {
 };
 
 export default Search;
+
+/* 
+const Seacrh = ({ onSearch }) => {
+  const [value, setValue] = useState("");
+  handleChange = event => setValue(event.target.value);
+  handleSubmit = event => {
+    event.preventDefault();
+    setValue("");
+    onSearch(value);
+  };
+}
+*/
