@@ -11,7 +11,7 @@ const DetailInfo = ({ person }) => {
       {person.description ? (
         <Fragment>
           <p>Описание:</p>
-          <textarea>{person.description}</textarea>
+          <textarea value={person.description} readOnly></textarea>
         </Fragment>
       ) : null}
       {person.address ? <AddressInfo address={person.address} /> : null}
