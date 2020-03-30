@@ -11,6 +11,6 @@
 
 **Использованные технологии**
 
-- create-react-app
+- React Hooks
 - CSS Modules
 - react-pagination
